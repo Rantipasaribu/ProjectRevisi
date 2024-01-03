@@ -1,36 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    android:background="#BFBF99">
+    android:background="@color/white">
 
     <ImageView
-        android:id="@+id/back_berita"
+        android:id="@+id/back_grafik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_back" />
 
     <TextView
-        android:id="@+id/txt_judul_berita"
+        android:id="@+id/txt_grafik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/back_berita"
-        android:text="Judul Berita"
+        android:layout_below="@+id/back_grafik"
+        android:text="Prediksi Persentase Penduduk Miskin"
+        android:gravity="center_horizontal"
         android:textSize="24sp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/txt_isi_berita"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linear_top"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/back_berita"
-        android:layout_marginTop="70dp"
-        android:text="Isi Berita"/>
+        android:orientation="vertical"
+        android:layout_below="@id/txt_grafik"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"> <!-- Sesuaikan margin -->
+
+        <TextView
+            android:id="@+id/txt_grafik1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Provinsi di Indonesia"
+            android:gravity="center_vertical"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"> <!-- Menambahkan gaya dropdown -->
+
+            <AutoCompleteTextView
+                android:id="@+id/prediksi_provinsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_provinsi"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
